@@ -1,5 +1,7 @@
 # Install [InvoiceNinja](https://app.invoiceninja.com/invoice_now?rc=GCYXTIBU) on [Uberspace](https://uberspace.de/)
 
+![](https://www.invoiceninja.com/wp-content/themes/invoice-ninja/images/laptop.jpg)
+<sup>Image by InvoiceNinja</sup>
 
 ## 1. Checkout the code
 
