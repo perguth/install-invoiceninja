@@ -1,4 +1,4 @@
-# Install [InvoiceNinja](https://www.invoiceninja.com/) on [Uberspace](https://uberspace.de/)
+# Install [InvoiceNinja](https://app.invoiceninja.com/invoice_now?rc=GCYXTIBU) on [Uberspace](https://uberspace.de/)
 
 
 ## 1. Checkout the code
