@@ -85,7 +85,7 @@ composer install
 
 ## 7. Create a MySQL database
 
-See here: [](https://wiki.uberspace.de/database:mysql?s[]=mysql).
+See here: [MySQL](https://wiki.uberspace.de/database:mysql?s[]=mysql).
 
 
 ## 8. Configure InvoiceNinja
