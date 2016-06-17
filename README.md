@@ -57,8 +57,7 @@ php composer-setup.php --install-dir=~/.composer
 php -r "unlink('composer-setup.php');"
 ```
 
-
-### Create a shellscript for composer in `~/bin/composer`:
+Create a shellscript for composer in `~/bin/composer`:
 
 ```sh
 #/bin/bash
