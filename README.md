@@ -1,6 +1,7 @@
 # Install InvoiceNinja on Uberspace
 
-## Checkout the code
+
+## 1. Checkout the code
 
 Say you want to host it under: `invoice.domain.com`:
 
@@ -9,15 +10,18 @@ cd $HOME/$USER
 git clone https://github.com/invoiceninja/invoiceninja.git invoice.domain.com
 ```
 
-Add domain to uberspace:
+### Add the domain to Uberspace
 
 ```sh
 uberspace-add-domain -d invoice.domain.com -w
 ```
 
-Setup a HTTPS certificate. See here: [Let's-Encrypt-Zertifikate](https://wiki.uberspace.de/webserver:https?s[]=encrypt#let_s-encrypt-zertifikate).
+### Setup a HTTPS certificate
 
-## Fix .htaccess
+See here: [Let's-Encrypt-Zertifikate](https://wiki.uberspace.de/webserver:https?s[]=encrypt#let_s-encrypt-zertifikate).
+
+
+## 2. Fix the `.htaccess`-files
 
 Within `<IfModule mod_rewrite.c>` in `.htaccess` add:
 
@@ -34,13 +38,16 @@ Within `public/.htaccess` add:
 RewriteBase /
 ```
 
-## Update PHP
+## 3. Update PHP
+
 ```sh
 echo "PHPVERSION=7.0" > ~/etc/phpversion
 killall php-cgi
 ```
 
-## Install composer
+
+## 4. Install composer
+
 ```sh
 # https://getcomposer.org/download/
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -50,7 +57,9 @@ php composer-setup.php --install-dir=~/.composer
 php -r "unlink('composer-setup.php');"
 ```
 
-Create a shellscript for composer in `~/bin/composer`:
+
+### Create a shellscript for composer in `~/bin/composer`:
+
 ```sh
 #/bin/bash
 php ~/.composer/composer.phar "$@"
@@ -58,28 +67,33 @@ php ~/.composer/composer.phar "$@"
 
 `chmod +x ~/bin/composer`
 
-## Install dependencies
+
+## 5. Install dependencies
+
 ```sh
 composer install
 ```
 
-## Crontab
+
+## 6. Set up crontab
+
 ```sh
 0 8 * * * /usr/local/bin/php /path/to/ninja/artisan ninja:send-invoices
 0 8 * * * /usr/local/bin/php /path/to/ninja/artisan ninja:send-reminders
 ```
 
-# Configure InvoiceNinja
 
-In `config/app.php` set `APP_URL` to `https://invoice.domain.com` and APP_KEY to a [32 character long random string](https://www.random.org/strings/?num=2&len=16&digits=on&upperalpha=on&loweralpha=on&unique=on&format=html&rnd=new).
-
-# Configure MySQL
+## 7. Create a MySQL database
 
 See here: [](https://wiki.uberspace.de/database:mysql?s[]=mysql).
 
-# Finish installation
+
+## 8. Configure InvoiceNinja
+
+In `config/app.php` set `APP_URL` to `https://invoice.domain.com` and APP_KEY to a [32 character long random string](https://www.random.org/strings/?num=2&len=16&digits=on&upperalpha=on&loweralpha=on&unique=on&format=html&rnd=new).
 
 Perfom the final steps via the frontend of InvoiceNinja: https://invoice.domain.com.
+
 
 --
 :rocket:
