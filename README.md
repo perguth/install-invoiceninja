@@ -98,7 +98,7 @@ See here: [MySQL](https://wiki.uberspace.de/database:mysql?s[]=mysql).
 
 In `config/app.php` set `APP_URL` to `https://invoice.domain.com` and `APP_KEY` to a [32 character long random string](https://www.random.org/strings/?num=2&len=16&digits=on&upperalpha=on&loweralpha=on&unique=on&format=html&rnd=new).
 
-Perfom the final steps via the frontend of InvoiceNinja: https://invoice.domain.com.
+Perfom the final steps via the frontend of InvoiceNinja in this example that would be on `https://invoice.domain.com`.
 
 
 --
