@@ -28,15 +28,20 @@ See here: [Let's-Encrypt-Zertifikate](https://wiki.uberspace.de/webserver:https?
 Within `<IfModule mod_rewrite.c>` in `.htaccess` add:
 
 ```sh
+  # Redirect HTTP to HTTPS:
   RewriteCond %{ENV:HTTPS} !=on
   RewriteRule ^(.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+  # Make InvoiceNinja work:
   RewriteBase /
   RewriteRule ^(.*)$ public/$1 [L]
 ```
 
 Within `public/.htaccess` add:
 ```sh
+# Make InvoiceNinja work with subdomains:
+# If you want to access InvoiceNinja via a subdomain and 
+# this rule is missing the browser will see a `500 internal server error`.
 RewriteBase /
 ```
 
