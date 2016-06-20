@@ -83,6 +83,8 @@ composer install
 
 ## 6. Set up crontab
 
+If you set up crontab then InvoiceNinja will be able to automatically send out recurring invoices. Otherwise this step is not necessary.
+
 ```sh
 0 8 * * * /usr/local/bin/php /path/to/ninja/artisan ninja:send-invoices
 0 8 * * * /usr/local/bin/php /path/to/ninja/artisan ninja:send-reminders
