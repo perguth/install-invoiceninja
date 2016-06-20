@@ -104,4 +104,4 @@ Perfom the final steps via the frontend of InvoiceNinja in this example that wou
 
 
 --
-:rocket:
+[![Flattr this](https://button.flattr.com/flattr-badge-large.png)]("https://flattr.com/submit/auto?fid=2pkq07&url=https%3A%2F%2Fgithub.com%2Fpguth%2Finstall-invoiceninja) :rocket:
