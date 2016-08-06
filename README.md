@@ -102,6 +102,9 @@ In `config/app.php` set `APP_URL` to `https://invoice.domain.com` and `APP_KEY` 
 
 Perfom the final steps via the frontend of InvoiceNinja in this example that would be on `https://invoice.domain.com`.
 
+--
+
+If something goes wrong check the [troubleshooting section](https://www.invoiceninja.com/self-host/) in the official guide.
 
 --
 [![Flattr this](https://button.flattr.com/flattr-badge-large.png)](https://flattr.com/submit/auto?fid=2pkq07&url=https%3A%2F%2Fgithub.com%2Fpguth%2Finstall-invoiceninja) :rocket:
