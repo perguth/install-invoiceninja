@@ -40,7 +40,7 @@ Within `<IfModule mod_rewrite.c>` in `.htaccess` add:
 Within `public/.htaccess` add:
 ```sh
 # Make InvoiceNinja work with subdomains:
-# If you want to access InvoiceNinja via a subdomain and 
+# If you want to access InvoiceNinja via a subdomain and
 # this rule is missing the browser will see a `500 internal server error`.
 RewriteBase /
 ```
@@ -52,42 +52,49 @@ echo "PHPVERSION=7.0" > ~/etc/phpversion
 killall php-cgi
 ```
 
+Make sure that your php-cli is set to verion 7.0 with `php -v`.
+If not try to renew your ssh session.
+
 
 ## 4. Install composer
 
 ```sh
 # https://getcomposer.org/download/
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php -r "if (hash_file('SHA384', 'composer-setup.php') === '070854512ef404f16bac87071a6db9fd9721da1684cd4589b1196c3faf71b9a2682e2311b36a5079825e155ac7ce150d') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+# If u see "Installer corrupt" it could be that composer-setup is changed.
+# Then make sure composer-setup.php is not corrupt and ignore this line.
+php -r "if (hash_file('SHA384', 'composer-setup.php') === 'e115a8dc7871f15d853148a7fbac7da27d6c0030b848d9b3dc09e2a0388afed865e6a3d6b3c0fad45c48e2b5fc1196ae') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 mkdir ~/.composer
-php composer-setup.php --install-dir=~/.composer
+php composer-setup.php --install-dir=${HOME}/.composer
 php -r "unlink('composer-setup.php');"
 ```
 
 Create a shellscript for composer in `~/bin/composer`:
-
-```sh
+```
+cat > ${HOME}/bin/composer << __EOF__
+sh
 #/bin/bash
 php ~/.composer/composer.phar "$@"
+__EOF__
 ```
 
-`chmod +x ~/bin/composer`
+Then make it executable with `chmod +x ~/bin/composer`.
 
 
 ## 5. Install dependencies
 
+Next switch to your to the previous created github clone (e.g. `cd ${HOME}/${USER}/invoice.domain.com`).
 ```sh
 composer install
 ```
-
 
 ## 6. Set up crontab
 
 If you set up crontab then InvoiceNinja will be able to automatically send out recurring invoices. Otherwise this step is not necessary.
 
 ```sh
-0 8 * * * /usr/local/bin/php /path/to/ninja/artisan ninja:send-invoices
-0 8 * * * /usr/local/bin/php /path/to/ninja/artisan ninja:send-reminders
+0 8 * * * /usr/local/bin/php /var/www/virtual/<<USER_NAME>>/invoice.domain.com/artisan ninja:send-invoices
+0 8 * * * /usr/local/bin/php /var/www/virtual/<<USER_NAME>>/invoice.domain.com/artisan ninja:send-reminders
 ```
 
 
