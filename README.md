@@ -60,7 +60,7 @@ If not try to renew your ssh session.
 
 Copy and paste the install instructions from https://getcomposer.org/download/
 
-Create a shellscript for composer in `~/bin/composer`:
+Create a shellscript for composer in `~/bin/composer` by copy and pasting:
 ```
 cat > ${HOME}/bin/composer << __EOF__
 sh
