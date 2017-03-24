@@ -102,6 +102,14 @@ In `config/app.php` set `APP_URL` to `https://invoice.domain.com` and `APP_KEY` 
 
 Perfom the final steps via the frontend of InvoiceNinja in this example that would be on `https://invoice.domain.com`.
 
---
+---
 
 If something goes wrong check the [troubleshooting section](https://www.invoiceninja.com/self-host/) in the official guide.
+
+**Or get professional help! Contact me:**
+
+```
+Per Guth
+help@perguth.de
+0711 217 244 42
+```
