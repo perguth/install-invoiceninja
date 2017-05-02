@@ -106,7 +106,7 @@ Perfom the final steps via the frontend of InvoiceNinja in this example that wou
 
 If something goes wrong check the [troubleshooting section](https://www.invoiceninja.com/self-host/) in the official guide.
 
-**Or get professional help! You can contact [InvoiceNinja team](https://www.invoiceninja.com/contact/) directly or me:**
+**Or get professional help! You can contact the [InvoiceNinja team](https://www.invoiceninja.com/contact/) directly or contact me:**
 
 ```
 Per Guth
